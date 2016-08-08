@@ -1,0 +1,80 @@
+[18-Dec-2015 01:14:23 Europe/Istanbul] PHP Warning:  require_once(/home/adgetpanel/public_html/inc/PHPExcel.php): failed to open stream: No such file or directory in /home/adgetpanel/public_html/inc/this_excel.php on line 21
+[18-Dec-2015 01:14:23 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/adgetpanel/public_html/inc/PHPExcel.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/adgetpanel/public_html/inc/this_excel.php on line 21
+[18-Dec-2015 01:14:35 Europe/Istanbul] PHP Warning:  require_once(/home/adgetpanel/public_html/inc/PHPExcel.php): failed to open stream: No such file or directory in /home/adgetpanel/public_html/inc/this_excel.php on line 21
+[18-Dec-2015 01:14:35 Europe/Istanbul] PHP Fatal error:  require_once(): Failed opening required '/home/adgetpanel/public_html/inc/PHPExcel.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/adgetpanel/public_html/inc/this_excel.php on line 21
+[18-Dec-2015 01:15:23 Europe/Istanbul] PHP Warning:  require(/home/adgetpanel/public_html/inc/PHPExcel/Autoloader.php): failed to open stream: No such file or directory in /home/adgetpanel/public_html/inc/PHPExcel.php on line 6
+[18-Dec-2015 01:15:23 Europe/Istanbul] PHP Fatal error:  require(): Failed opening required '/home/adgetpanel/public_html/inc/PHPExcel/Autoloader.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/adgetpanel/public_html/inc/PHPExcel.php on line 6
+[24-Jan-2016 23:48:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetpanel/public_html/inc/fetchOrdersForInvoice.php on line 20
+[24-Jan-2016 23:48:51 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetpanel/public_html/inc/fetchOrdersForInvoice.php on line 20
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Deprecated:  mysql_real_escape_string(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  mysql_real_escape_string(): Access denied for user ''@'localhost' (using password: NO) in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[04-Aug-2016 13:44:20 Europe/Istanbul] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  Error establishing mySQL database connection. Correct user/password? Correct hostname? Database server running? in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 89
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  mySQL database connection is not active in /home/adgetcrm/public_html/inc/db/ez_sql_mysql.php on line 121
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Deprecated:  mysql_real_escape_string(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  mysql_real_escape_string(): Access denied for user ''@'localhost' (using password: NO) in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[04-Aug-2016 13:44:21 Europe/Istanbul] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home/adgetcrm/public_html/inc/this_excel.php on line 99
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[05-Aug-2016 17:18:25 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:38 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:54:56 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:56:52 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 19:59:47 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Notice:  Undefined variable: data in /home/adgetcrm/public_html/inc/this_excel.php on line 130
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
+[06-Aug-2016 20:00:15 Europe/Istanbul] PHP Warning:  Invalid argument supplied for foreach() in /home/adgetcrm/public_html/inc/this_excel.php on line 57
