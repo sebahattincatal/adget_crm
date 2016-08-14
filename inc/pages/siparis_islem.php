@@ -361,7 +361,7 @@ if (!$row) {
                     </div>
 
 
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label class="col-sm-3 control-label">Ödeme</label>
 
                         <div class="col-sm-6">
@@ -384,7 +384,7 @@ if (!$row) {
                             </select>
 
                         </div>
-                    </div>
+                    </div>-->
 
 
                     <div class="form-group">
@@ -397,11 +397,13 @@ if (!$row) {
 
                                 <?php
 
-                                if (!empty($row->il)) {
+                                /*if (!empty($row->il)) {
                                     echo '<option value="' . $row->il . '">' . $row->il . '</option>';
-                                }
+                                }*/
 
-                                $il_sq = $db->get_results("SELECT * FROM il ");
+                                echo '<option value="#">Select City..!</option>';
+
+                                $il_sq = $db->get_results("SELECT * FROM il WHERE il_kodu != '0'");
                                 foreach ($il_sq as $ilvalue) {
                                     echo '<option value="' . $ilvalue->il_adi . '">' . $ilvalue->il_adi . '</option>';
                                 }
@@ -427,14 +429,14 @@ if (!$row) {
                                     if (!empty($row->il)) {
                                         $il_ids = $db->get_row("SELECT * FROM il where il_adi like '%" . $row->il . "%' ");
                                         $ilsqls = "where  il_id='" . $il_ids->il_id . "'";
-                                    } else {
+                                    } /*else {
                                         $ilsqls = "where  il_id=1";
-                                    }
+                                    }*/
 
-                                    $ilce_sq = $db->get_results("SELECT * FROM ilce $ilsqls ");
+                                    /*$ilce_sq = $db->get_results("SELECT * FROM ilce $ilsqls ");
                                     foreach ($ilce_sq as $ilcevalue) {
                                         echo '<option value="' . $ilcevalue->ilce_adi . '">' . $ilcevalue->ilce_adi . '</option>';
-                                    }
+                                    }*/
 
                                     ?>
 
@@ -446,7 +448,7 @@ if (!$row) {
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="form-group" dir="rtl">
                         <label class="col-sm-3 control-label">Adres</label>
 
                         <div class="col-sm-6">
@@ -454,11 +456,11 @@ if (!$row) {
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" dir="auto">
                         <label class="col-sm-3 control-label">Müşteri Notu</label>
 
                         <div class="col-sm-6">
-                            <textarea rows="3" disabled="disabled" class="form-control" name="musteri_notu"><?= $row->musteri_notu ?></textarea>
+                            <textarea class="form-control" name="yorum" id="yorum" cols="45" rows="5"><?= $row->musteri_notu ?></textarea>
                         </div>
                     </div>
 
@@ -595,8 +597,8 @@ if (!$row) {
 
                 </div>
 
-                <div class="form-group" id="yrm" style="display:none">
-                    <label class="col-sm-3 control-label">Yorum</label>
+                <div class="form-group" id="yrm" style="display:none;text-align: center;">
+                    <!--<label class="col-sm-3 control-label">Yorum</label>
 
                     <div class="col-sm-6">
 
@@ -613,9 +615,16 @@ if (!$row) {
                             </button>
                             &nbsp;
                         </center>
-                    </div>
-                </div>
+                    </div>-->
+                    <div class="container">
 
+                    <div class='alert alert-success'>
+                        <span>Sipariş İşlemi Başarılı Bir Şekilde Gerçekleştirildi.</span> Sipariş Listesine Dönmek için <a href='/pages.php?ido=siparis_listesi&drm=1&tp=1'>buraya</a> tıklayın.
+                    </div>
+
+                    </div>
+
+                </div>
 
         </div>
         <!-- panel-body -->
@@ -677,7 +686,7 @@ Henüz Not Yok.
 
                     } else {
                         echo '
-                 <button type="button" onclick="level1();"  class="btn btn-primary" id="a1">Devam et</button>&nbsp;
+                 <button type="button" onclick="level1();"  class="btn btn-primary" id="a1">Siparişi Tamamla</button>&nbsp;
 ';
                     }
 
@@ -732,9 +741,16 @@ Henüz Not Yok.
         $("#yrm").show();
 
         $("#a1").hide();
+        $("#comments").hide();
     }
 
-    function level2() {
+    /*function level1() {
+        $('#f1').show();
+        $('#yrm').hide();
+        $('#a1').show();
+    }*/
+
+    /*function level2() {
 
         $("#f1").show();
         $("#a2").hide();
@@ -742,7 +758,7 @@ Henüz Not Yok.
 
         $("#yrm").hide();
 
-    }
+    }*/
 
 </script>
 
