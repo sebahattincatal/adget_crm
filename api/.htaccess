@@ -1,0 +1,7 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^crm/$   apiController.php?view=all [nc,qsa]
+RewriteRule ^crm/([0-9]+)/$   apiController.php?view=single&id=$1 [nc,qsa]
