@@ -37,11 +37,23 @@
 
 		function inNumeric($id)
 		{
-			if (is_numeric($id)) {
+			if (is_numeric($id))
 				return true;
-			} else {
+			else
 				return false;
-			}
+		}
+
+		function isNull($data)
+		{
+			if(isset($data) && !empty($data))
+				return true;
+			else
+				return false;
+		}
+
+		function isTrim($data)
+		{
+			return $data = trim($data);
 		}
 
 		function orderSend()
@@ -53,7 +65,6 @@
 			$quantity = $this->clear($_POST['quantity']);
 			$product = $this->clear($_POST['product_name']);
 			$name_surname = $this->clear($_POST['name_surname']);
-			//$surname = $this->clear($_POST['surname']);
 			$city = $this->clear($_POST['city']);
 			$district = $this->clear($_POST['district']);
 			$address = $this->clear($_POST['address']);
@@ -79,19 +90,55 @@
 					$error = true;
 					$data['statusCode'] = 102;
 					$data['description'] = 'Geçersiz adet girdiniz';
+
+				} elseif (!$this->isNull($price)) {
+
+					$error = true;
+					$data['statusCode'] = 103;
+					$data['description'] = 'Fiyat değerini göndermelisiniz';
+
+				} elseif (!$this->isNull($product)) {
+
+					$error = true;
+					$data['statusCode'] = 104;
+					$data['description'] = 'Ürünün adını göndermelisiniz';
+
+				} elseif (!$this->isNull($name_surname)) {
+
+					$error = true;
+					$data['statusCode'] = 105;
+					$data['description'] = 'Müşterinin ad ve soyad bilgisini göndermelisiniz';
+
+				} elseif (!$this->isNull($city)) {
+
+					$error = true;
+					$data['statusCode'] = 106;
+					$data['description'] = 'Siparişe ait il bilgisini göndermelisiniz';
+
+				} elseif (!$this->isNull($district)) {
+
+					$error = true;
+					$data['statusCode'] = 107;
+					$data['description'] = 'Siparişe ait ilçe bilgisini göndermelisiniz';
+
+				} elseif (!$this->isNull($address)) {
+
+					$error = true;
+					$data['statusCode'] = 108;
+					$data['description'] = 'Siparişe ait adres bilgisini göndermelisiniz';
 				}
 
 				if ($error == false) {
 					if ($this->orderSendInsert($order_id, $quantity, $product, $price, $name_surname, $phone, $city, $district, $address, $api_key)) {
 						
 						$error = false;
-						$data['statusCode'] = 103;
+						$data['statusCode'] = 109;
 						$data['description'] = 'Siparişiniz Başarılı Bir Şekilde Alınmıştır.';
 
 					} else {
 
 						$error = true;
-						$data['statusCode'] = 104;
+						$data['statusCode'] = 110;
 						$data['description'] = 'Siparişiniz Alınırken Hata Meydana Geldi. Lütfen Tekrar Deneyin.';
 					}
 				}
@@ -105,27 +152,21 @@
 			return $this->response($data);
 		}
 
-		function orderSendInsert($order_id, $quantity, $product, $price, $name_surname, $phone, $city, $district, $address, $api_key)
+		private function orderSendInsert($order_id, $quantity, $product, $price, $name_surname, $phone, $city, $district, $address, $api_key)
 		{
 			global $db;
 
-			//$result = $db->get_results("INSERT INTO 'siparisler' (api_key, order_id, Telefon_no, fiyat, urun_adeti,urunun_adi, ad_soyad, il, ilce, adres) VALUES ('".$order_id."', '".$quantity."', '".$product."', '".$price."', '".$name_surname."', '".$phone."', '".$city."', '".$district."', '".$address."', '".$api_key."')");
-
-
-			$result = $db->get_query("INSERT INTO siparisler (order_id, urun_adeti, urunun_adi, fiyat, ad_soyad, Telefon_no, il, ilce, adres, api_key) VALUES ('".$order_id."', '".$quantity."', '".$product."', '".$price."', '".$name_surname."', '".$phone."', '".$city."', '".$district."', '".$address."', '".$api_key."')");
-
-			var_dump($result);exit;
+			$result = $db->query("INSERT INTO siparisler (order_id, urun_adeti, urunun_adi, fiyat, ad_soyad, Telefon_no, il, ilce, adres, api_key) VALUES ('".$this->isTrim($order_id)."', '".$this->isTrim($quantity)."', '".$this->isTrim($product)."', '".$this->isTrim($price)."', '".$this->isTrim($name_surname)."', '".$this->isTrim($phone)."', '".$this->isTrim($city)."', '".$this->isTrim($district)."', '".$this->isTrim($address)."', '".$this->isTrim($api_key)."')");
 
 			if(count($result) > 0) {
 			 	return true;
-			} else{
+			} else {
 			  	return false;
 			}
 		}
 
 		function notFound()
 		{
-			
 			$data['statusCode'] = 404;
 			$data['description'] = 'Böyle bir url tanımlaması bulunmamaktadır.';
 
