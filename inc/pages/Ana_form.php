@@ -142,12 +142,7 @@ if(!empty($name)){
       "sPaginationType": "full_numbers"
     });
     
-    // Select2
-    jQuery('select').select2({
-        minimumResultsForSearch: -1
-    });
-    
-    jQuery('select').removeClass('form-control');
+
     
     // Delete row in a table
     jQuery('.delete-row').click(function(){

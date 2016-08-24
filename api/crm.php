@@ -77,55 +77,55 @@
 
 					$error = true;
 					$data['statusCode'] = 100;
-					$data['description'] = 'Geçersiz sipariş numarası formatı';
+					$data['description'] = 'Invalid order number format';
 
 				} elseif (!$this->inNumeric($phone)) {
 
 					$error = true;
 					$data['statusCode'] = 101;
-					$data['description'] = 'Geçersiz telefon numarası formatı';
+					$data['description'] = 'Invalıd phone number';
 
 				} elseif (!$this->inNumeric($quantity)) {
 
 					$error = true;
 					$data['statusCode'] = 102;
-					$data['description'] = 'Geçersiz adet girdiniz';
+					$data['description'] = 'Invalid product number(piece)';
 
 				} elseif (!$this->isNull($price)) {
 
 					$error = true;
 					$data['statusCode'] = 103;
-					$data['description'] = 'Fiyat değerini göndermelisiniz';
+					$data['description'] = 'You must send price';
 
 				} elseif (!$this->isNull($product)) {
 
 					$error = true;
 					$data['statusCode'] = 104;
-					$data['description'] = 'Ürünün adını göndermelisiniz';
+					$data['description'] = 'You must send product name';
 
 				} elseif (!$this->isNull($name_surname)) {
 
 					$error = true;
 					$data['statusCode'] = 105;
-					$data['description'] = 'Müşterinin ad ve soyad bilgisini göndermelisiniz';
+					$data['description'] = 'You must send customer name&surname';
 
 				} elseif (!$this->isNull($city)) {
 
 					$error = true;
 					$data['statusCode'] = 106;
-					$data['description'] = 'Siparişe ait il bilgisini göndermelisiniz';
+					$data['description'] = 'You must send order city';
 
 				} elseif (!$this->isNull($district)) {
 
 					$error = true;
 					$data['statusCode'] = 107;
-					$data['description'] = 'Siparişe ait ilçe bilgisini göndermelisiniz';
+					$data['description'] = 'You must send order town';
 
 				} elseif (!$this->isNull($address)) {
 
 					$error = true;
 					$data['statusCode'] = 108;
-					$data['description'] = 'Siparişe ait adres bilgisini göndermelisiniz';
+					$data['description'] = 'You must send order adres';
 				}
 
 				if ($error == false) {
@@ -133,20 +133,20 @@
 						
 						$error = false;
 						$data['statusCode'] = 109;
-						$data['description'] = 'Siparişiniz Başarılı Bir Şekilde Alınmıştır.';
+						$data['description'] = 'Order succesfully get.';
 
 					} else {
 
 						$error = true;
 						$data['statusCode'] = 110;
-						$data['description'] = 'Siparişiniz Alınırken Hata Meydana Geldi. Lütfen Tekrar Deneyin.';
+						$data['description'] = 'An Error happen while getting order';
 					}
 				}
 
 			} else {
 
 				$data['statusCode'] = 1000;
-				$data['description'] = 'Bu apikeye sahip kullanıcı bulunmamaktadır';
+				$data['description'] = 'This api key already using';
 			}
 
 			return $this->response($data);
@@ -168,7 +168,7 @@
 		function notFound()
 		{
 			$data['statusCode'] = 404;
-			$data['description'] = 'Böyle bir url tanımlaması bulunmamaktadır.';
+			$data['description'] = 'There is no url identification';
 
 			return $this->response($data);
 		}

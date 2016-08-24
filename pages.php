@@ -34,6 +34,8 @@ define("idokey", "1");
     <link rel="stylesheet" href="css/colorpicker.css"/>
     <link rel="stylesheet" href="css/dropzone.css"/>
     <link rel="stylesheet" href="css/modify.css"/>
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -41,6 +43,7 @@ define("idokey", "1");
     <![endif]-->
 
     <script src="js/jquery.js"></script>
+    <script src="js/select2.min.js"></script>
 
 </head>
 
@@ -679,10 +682,11 @@ define("idokey", "1");
             }
         });
 
-        $(".select2").select2({
-            width: '100%',
-            minimumResultsForSearch: -1
+        $(".adget-sc select").select2({
+            /*width: '100%',*/
+            /*minimumResultsForSearch: -1*/
         });
+
 
 
     });
@@ -728,12 +732,6 @@ define("idokey", "1");
             "sPaginationType": "full_numbers"
         });
 
-        // Select2
-        $('select').select2({
-            minimumResultsForSearch: -1
-        });
-
-        $('select').removeClass('form-control');
 
         // Delete row in a table
         $('.delete-row').click(function () {

@@ -24,6 +24,17 @@ error_reporting(E_ALL);
     </div>
 </div>
 <link href="css/morris.css" rel="stylesheet">
+
+<!--<link rel="stylesheet" href="//select2.github.io/dist/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="css/select2-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/select2.css">
+
+<link rel="stylesheet" type="text/javascript" href="js/select2.min.js">
+<link rel="stylesheet" type="text/css" href="css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../css/select2-bootstrap.css">-->
+
+
 <?php
 
 
@@ -38,6 +49,8 @@ $user_type = $_SESSION["user_type"];
 
 
 $row = $db->get_row("SELECT * FROM siparisler where siparis_id='" . $id . "' ");
+
+$row2 = $db->get_row("SELECT * FROM siparis_notlari where siparis_id='" . $id . "' ");
 
 if ($row->kilit_pers <> $_SESSION["admin_id"]) {
     if ($user_type <> 1) {
@@ -227,7 +240,12 @@ if (!$row) {
         </div>
         <div class="panel-body panel-body-nopadding col-sm-8">
 
-            <form class="form-horizontal form-bordered siparis-form" method="post">
+            <form class="form-horizontal form-bordered siparis-form" method="post" action="inc\siparis_son.php">
+
+                <input type="hidden" name="siparis_id" value="<?= $row->siparis_id ?>">
+                <input type="hidden" name="islem" value="<?= $siparis_durumu_a ?>">
+                <input type="hidden" name="personel_id" value="<?= $_SESSION["admin_id"] ?>">
+
                 <div id="f1">
                     <div class="form-group">
                         <label class="col-sm-3 control-label">SipNo </label>
@@ -264,14 +282,14 @@ if (!$row) {
                             <?php
 
                             if (substr($row->Telefon_no, 0, 1) == 0) {
-                                $tlfw = substr($row->Telefon_no, -10, 10);
+                                $tlfw = substr($row->Telefon_no, -25, 25);
                             } else {
                                 $tlfw = $row->Telefon_no;
                             }
 
 
                             ?>
-                            <input type="text" placeholder="Telefon No" name="tel" id="phone" value="<?= $tlfw ?>"
+                            <input type="text" placeholder="Telefon No" name="tel"  value="<?= $tlfw ?>"
                                    style="width:200px; float:left;" required class="form-control"/>
                             <a href="sip:<?= filler($row->Telefon_no) ?>" style=" float:left; margin-left:15px;"><img
                                     src="images/phone.png" height="40" width="40"></a>
@@ -339,8 +357,14 @@ if (!$row) {
                                     onchange="fiyatla();">
                                 <?php
 
+
                                 for ($i = 0; $i <= 20; $i++) {
-                                    echo '<option value="' . $i . '" >' . $i . ' ₺</option>';
+                                    
+                                    if ( $row->indirim == $i ) {
+                                        echo '<option value="' . $i . '" selected>' . $i . ' ₺</option>';
+                                    } else {
+                                        echo '<option value="' . $i . '" >' . $i . ' ₺</option>';
+                                    }
                                 }
 
                                 ?>
@@ -390,56 +414,69 @@ if (!$row) {
                     <div class="form-group">
                         <label class="col-sm-3 control-label">il / ilce</label>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 chosen-rtl">
 
-                            <select name="il" id="il" class="form-control " style="width:150px; float:left;"
-                                    onchange="ilce_getir();">
+                            <div class="adget-col-item adget-sc" style="display:inline-block; width:150px;">
 
-                                <?php
+                                <select name="il" id="il" class="select2" onchange="ilce_getir();">
 
-                                /*if (!empty($row->il)) {
-                                    echo '<option value="' . $row->il . '">' . $row->il . '</option>';
-                                }*/
-
-                                echo '<option value="#">Select City..!</option>';
-
-                                $il_sq = $db->get_results("SELECT * FROM il WHERE il_kodu != '0'");
-                                foreach ($il_sq as $ilvalue) {
-                                    echo '<option value="' . $ilvalue->il_adi . '">' . $ilvalue->il_adi . '</option>';
-                                }
-
-
-                                ?>
-
-
-                            </select>
-
-                            <div style="float:left;width:25px;">
-                                <center>-</center>
-                            </div>
-
-                            <div id="sps">
-                                <select name="ilce" id="ilce" class="form-control" style="width:150px; float:left;">
                                     <?php
 
-                                    if (!empty($row->ilce)) {
+                                    /*if (!empty($row->il)) {
+                                        echo '<option value="' . $row->il . '">' . $row->il . '</option>';
+                                    }*/
+
+                                    //echo '<option value="#">Select City..!</option>';
+
+                                        $il_sq = $db->get_results("SELECT * FROM il WHERE il_kodu != '0' ORDER BY il_id DESC");
+                                        foreach ($il_sq as $ilvalue) {
+                                            
+                                            if ( $row->il == $ilvalue->il_adi ) {
+                                                echo '<option value="' . $ilvalue->il_adi . '" selected>' . $ilvalue->il_adi . '</option>';
+                                            } else {
+                                                echo '<option value="' . $ilvalue->il_adi . '">' . $ilvalue->il_adi . '</option>';
+                                            }
+                                        }
+
+                                    ?>
+
+                                </select>
+
+                            </div>
+
+
+                            <div style="display:inline-block; width:25px;">
+                                <center>--</center>
+                            </div>
+
+                            <div id="sps" class="adget-sc" style="display:inline-block; width:150px;">
+                                <select name="ilce" id="ilce" class="select2" style="display:inline-block; width:150px;">
+                                    <?php
+
+                                    /*if (!empty($row->ilce)) {
                                         echo '<option value="' . $row->ilce . '">' . $row->ilce . '</option>';
                                     }
 
                                     if (!empty($row->il)) {
                                         $il_ids = $db->get_row("SELECT * FROM il where il_adi like '%" . $row->il . "%' ");
                                         $ilsqls = "where  il_id='" . $il_ids->il_id . "'";
-                                    } /*else {
+                                    } else {
                                         $ilsqls = "where  il_id=1";
                                     }*/
 
-                                    /*$ilce_sq = $db->get_results("SELECT * FROM ilce $ilsqls ");
+                                    $ilce_sq = $db->get_results("SELECT * FROM ilce $ilsqls ");
                                     foreach ($ilce_sq as $ilcevalue) {
-                                        echo '<option value="' . $ilcevalue->ilce_adi . '">' . $ilcevalue->ilce_adi . '</option>';
-                                    }*/
+                                        //echo '<option value="' . $ilcevalue->ilce_adi . '">' . $ilcevalue->ilce_adi . '</option>';
+
+                                        if ( $row->ilce == $ilcevalue->ilce_adi ) {
+                                            echo '<option value="' . $ilcevalue->ilce_adi . '" selected>' . $ilcevalue->ilce_adi . '</option>';
+                                        } else {
+                                            echo '<option value="' . $ilcevalue->ilce_adi . '">' . $ilcevalue->ilce_adi . '</option>';
+                                        }
+                                    }
+
 
                                     ?>
-
 
                                 </select>
 
@@ -460,7 +497,7 @@ if (!$row) {
                         <label class="col-sm-3 control-label">Müşteri Notu</label>
 
                         <div class="col-sm-6">
-                            <textarea class="form-control" name="yorum" id="yorum" cols="45" rows="5"><?= $row->musteri_notu ?></textarea>
+                            <textarea class="form-control" name="yorum" id="yorum" cols="45" rows="5"></textarea>
                         </div>
                     </div>
 
@@ -685,9 +722,14 @@ Henüz Not Yok.
                         }
 
                     } else {
-                        echo '
+                        /*echo '
                  <button type="button" onclick="level1();"  class="btn btn-primary" id="a1">Siparişi Tamamla</button>&nbsp;
+';*/
+                    echo '
+                 <button type="submit" class="btn btn-primary">Siparişi Tamamla</button>&nbsp;
 ';
+
+
                     }
 
                     ?>
@@ -721,6 +763,8 @@ Henüz Not Yok.
 
 </script>-->
 
+
+
 <script type="text/javascript">
 
 
@@ -733,7 +777,6 @@ Henüz Not Yok.
         var kalan = attsr - ins;
         $("#yyx").html(kalan + ".00 ");
     }
-
 
     function level1() {
 
@@ -761,5 +804,3 @@ Henüz Not Yok.
     }*/
 
 </script>
-
-

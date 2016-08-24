@@ -235,17 +235,17 @@ switch ($case) {
 		case "412536701":
 		 $il  = mysql_real_escape_string(strip_tags($_POST["il"]));
 
-		$il_ids = $db->get_row("SELECT * FROM il where il_adi like '%".$il."%' ");
+		$il_ids = $db->get_row(" SELECT * FROM il where il_adi like '%".$il."%' ");
         $ilsqls = "where  il_id='".$il_ids->il_id."'";
 
 
-        $ilce_sq =$db->get_results("SELECT * FROM ilce $ilsqls ");
+        $ilce_sq =$db->get_results(" SELECT * FROM ilce $ilsqls ORDER BY ilce_id DESC");
         if($ilce_sq){
-        	echo '<select name="ilce" id="ilce"  class="form-control" style="width:150px; float:left;"  > ';
+        	echo '<select name="ilce" id="ilce" class="select2" style="width:150px; display:inline-block; padding-left: 8px; padding-right: 20px; padding-top: 5px; padding-bottom: 4px; border-radius: 3px;">';
          foreach ($ilce_sq as  $ilcevalue) {
               		echo '<option value="'.$ilcevalue->ilce_adi.'">'.$ilcevalue->ilce_adi.'</option>';
               	}
-              	echo ' </select> ';
+              	echo '</select>';
         }
 
 		break;

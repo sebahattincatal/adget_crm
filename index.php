@@ -41,11 +41,13 @@ $esqlx = $db->get_row("SELECT sum(fiyat) as ciro, count(*) as adet from  siparis
     <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
     <link href="css/style.default.css" rel="stylesheet">
 
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body class="leftpanel-collapsed">
@@ -374,6 +376,7 @@ $esqlx = $db->get_row("SELECT sum(fiyat) as ciro, count(*) as adet from  siparis
         <script src="js/jquery.sparkline.min.js"></script>
         <script src="js/toggles.min.js"></script>
         <script src="js/retina.min.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/jquery.cookies.js"></script>
 
         <script src="js/flot/jquery.flot.min.js"></script>

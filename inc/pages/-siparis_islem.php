@@ -14,6 +14,16 @@
   </div>
 </div>
         <link href="css/morris.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/javascript" href="js/select2.min.js">
+        <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(".adget-search-select").select2();
+          });
+        </script>
+
 <?php
 
       
@@ -384,7 +394,7 @@ if($_POST){
                 <div style="float:left;width:25px;"><center>-</center></div> 
 
 <div id="sps">
-  					<select name="ilce" id="ilce"  class="form-control" style="width:150px; float:left;" >
+  					<select name="ilce" id="ilce"  class="adget-search-select" style="width:150px; float:left;" >
               <?php
 
                 if(!empty($row->ilce)){
