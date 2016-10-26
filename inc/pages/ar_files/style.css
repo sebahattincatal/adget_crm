@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=latin,latin-ext);
+
+/* Internet Explorer 10 in Windows 8 and Windows Phone 8 Bug fix */
+@-webkit-viewport {
+ width: device-width;
+}
+
+ @-moz-viewport {
+ width: device-width;
+}
+
+ @-ms-viewport {
+ width: device-width;
+}
+
+ @-o-viewport {
+ width: device-width;
+}
+
+ @viewport {
+ width: device-width;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, html a {
+	-webkit-font-smoothing: antialiased;
+}
+
+ul {margin:0;padding:0}
+li {list-style:none;}
+body {
+color: #000;
+font-family: 'Open Sans', sans-serif;
+margin: auto !important;
+overflow-x: hidden !important;
+}
+
+.header {float:left;width:100%;margin-bottom:3%;position:relative;}
+.header a, .header img {float:left;width:100%;}
+.header p {margin: 0;position: absolute;top: 3%;right: 24%;font-size: 4vw;font-weight: 600;}
+
+.content {float:left;width:100%;padding: 0 3%;}
+.content img {float:left;width:100%;}
+.content b {float: left;width: 100%;font-size: 4vw;margin-bottom: 2%;}
+.content p {float: left;width: 100%;font-size: 4vw;margin: 0 0 3% 0;}
+.content p a {color:#ff0000;font-weight:bold;}
+.content > a {float: left;width: 100%;margin-bottom: 3%;}
+.content strong {float: left;width: 100%;color: #a300d9;margin-bottom: 3%;font-size: 5vw;}
+.content strong b {float: none;width: auto;margin: 0;font-weight: 900;font-size: 4.8vw;}
+.kanserolmak {float:right;width:100%;}
+.kanserolmak a {float: right;width: 40%;}
+.kanserolmak .yazi {float: right;width: 60%;padding-right: 2%;}
+.kanserolmak .yazi h1 {float: right;width: 100%;font-size: 4vw;margin: 0 3% 0 0;}
+.link {background: #ff0000;font-size: 4vw;color: #fff;font-weight: bold;padding: 3%;text-align: center;}
+.foot {float:left;width:100%;text-align:center;}
+.foot a {float: left;width: 100%;font-size: 4vw;color:#000;margin: 0 0 3% 0;}
+.facebookyorumlari {float:left;width:100%;}
+
+.yorumicerik {float: left;width: 100%;margin: 1% 0 3% 0;border-bottom: 1px solid #F9CCE0;padding-bottom: 1%;}
+.yorumisim {float: left;width: 100%;margin-bottom: 1%;font-size: 4vw;font-weight: bold;}
+.yorumyazi {float: left;width: 100%;font-size: 4vw;}
+.bgform {background:url(../images/bgform1.jpg);width:100%;background-size: cover;background-repeat: no-repeat;overflow: auto;}
+
+#vals {
+	width: 100%;
+	margin: 0px auto;
+	font-size:25px;
+}
+
+.numbs {
+	color: #fff;
+}
+
+#h {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+    font-size: 6vw;
+    font-weight: 600;
+    line-height: 10vw;
+    background: #d92027;
+    border-radius: 10px;
+    margin-top: 1%;
+    text-align: center;
+}
+#m {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+    font-size: 6vw;
+    font-weight: 600;
+    line-height: 10vw;
+    background: #d92027;
+    border-radius: 10px;
+    margin-top: 1%;
+    text-align: center;
+}
+#s {
+    float: left;
+    width: 30%;
+    font-size: 6vw;
+    font-weight: 600;
+    line-height: 10vw;
+    background: #d92027;
+    border-radius: 10px;
+    margin-top: 1%;
+    text-align: center;
+}
+
+#labels {
+	width: 100%;
+    float: left;
+	margin: 0px auto;
+}
+
+.labs {
+font-size: 4vw;
+    color: #000;
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.labs:last-child {margin-right:0;}
+.defaultCountdown {float: left;width: 85%;margin-left: 9%;margin-top: 5%;}
+
+
+::-webkit-input-placeholder {
+   color: #000;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #000;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #000;  
+}
+
+:-ms-input-placeholder {  
+   color: #000;  
+}
+
+.sayac {float: left;width: 70%;margin-top: 12%;}
+.sayac > b {float: left;width: 100%;font-size: 3.5vw;text-align: center;}
+.stock {float: left;width: 29%;margin-left: 1%;margin-top: 12%;text-align:center;}
+.stock strong {float: left;width: 100%;font-size: 3.5vw;text-align: center;}
+.stock span {float: left;width: 100%;text-align: center;font-size: 4vw;margin-top: 12%;font-weight: 600;}
+.stock p {width: 50%;display: inline-block;font-size: 6vw;font-weight: 600;line-height: 10vw;background: #d92027;color: #fff;border-radius: 10px;text-align: center;margin: 0 0 0 0;}
+
+.form {float:left;width:100%;padding:0 3%;}
+.input {float: left;width: 100%;margin-bottom: 3%;}
+.input input {padding: 0;margin: 0;float: left;width: 100%;height: 11vw;border-radius: 15px;border: none;padding-left: 2%;background: #ebebf0;outline: none;font-size: 4vw;}
+.input select {padding: 0;margin: 0;float: left;width: 100%;height: 11vw;border-radius: 15px;border: none;padding-left: 2%;background: url(../images/ok.png) no-repeat #ebebf0 97% 3vw;outline: none;font-size: 4vw;-webkit-appearance: none;}
+
+.button {float:left;width:100%;}
+.button button {float: left;padding: 0;margin: 0;background: none;border: none;width:100%;margin-bottom:3%;}
+.form > strong {margin-top: 3%;text-align: center;}
+
+
+

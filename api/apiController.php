@@ -20,6 +20,18 @@ switch($type){
 		$crm->findApiKey();
 		break;
 
+	case "orderControl":
+
+		$crm = new crm();
+		$crm->orderStatus();
+		break;
+
+	case "statusInformation":
+
+		$crm = new crm();
+		$crm->statusInformation();
+		break;
+
 	default:
     	$crm = new crm();
 		$crm->notFound();

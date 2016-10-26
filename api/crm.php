@@ -165,6 +165,51 @@
 			}
 		}
 
+		public function orderStatus()
+		{
+			$api_key = $this->clear($_POST['api_key']);
+			$order_id = $this->clear($_POST["order_id"]);
+
+			$data = $this->orderStatusControl($order_id);
+
+			return $this->response($data);
+		}
+
+		private function orderStatusControl($order_id)
+		{
+			global $db;
+
+			$result = $db->get_row("SELECT order_id, urunun_adi, fiyat, siparis_durumu FROM siparisler WHERE order_id = '".$order_id."'");
+
+			return $result;
+		}
+
+		public function orderStatusInformation()
+		{
+			$api_key = $this->clear($_POST['api_key']);
+			$durum_id = $this->clear($_POST["durum_id"]);
+
+			$data = $this->statusInformation($durum_id);
+
+			return $this->response($data);
+		}
+
+		public function statusInformation()
+		{
+			global $db;
+
+			//$result = $db->get_row("SELECT durum_id, name FROM siparis_durumlari WHERE durum_id = '".$durum_id."'");
+
+			$result = $db->get_results("SELECT durum_id, name FROM siparis_durumlari");
+
+			foreach ($result as $value) {
+				echo "status_id: ".$value->durum_id."\t";
+				echo "status_name: ".$value->name."\n";
+			}
+
+			//return $result;
+		}
+
 		function notFound()
 		{
 			$data['statusCode'] = 404;

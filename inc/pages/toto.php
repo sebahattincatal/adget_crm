@@ -20,7 +20,7 @@ AND  '".date("Y-m-d H:i:s")."'
 */
 
 $kuyruk =(int)$_SESSION["sip_type"];
-if(empty($kuyruk)){ $kuyruk=5; }
+if(empty($kuyruk)){ $kuyruk=1; }
 
 
 $all = $db->get_row("SELECT * 
