@@ -32,6 +32,13 @@ switch($type){
 		$crm->statusInformation();
 		break;
 
+	case "orderListStatusControl":
+
+		$crm = new crm();
+		$crm->orderListStatusControl();
+		break;
+
+
 	default:
     	$crm = new crm();
 		$crm->notFound();

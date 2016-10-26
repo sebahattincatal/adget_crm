@@ -210,6 +210,26 @@
 			//return $result;
 		}
 
+		public function orderListStatusControl()
+		{
+			$orders = array();
+
+			$api_key = $this->clear($_POST['api_key']);
+			$orders = $this->clear($_POST["order_id"]);
+
+			$orderId = explode(",", $orders);
+
+			foreach ($orderId as $key => $value) {
+				//echo $value;exit;
+
+				$result = $db->get_results("SELECT order_id, urunun_adi, fiyat, siparis_durumu FROM siparisler WHERE order_id = '".$value."'");
+
+			    print_r(get_object_vars($result));
+			}
+
+			//return $result;
+		}
+
 		function notFound()
 		{
 			$data['statusCode'] = 404;
