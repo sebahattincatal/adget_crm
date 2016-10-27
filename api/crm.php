@@ -3,6 +3,8 @@
 	include "inc/new_config.php";
 	include "inc/function.php";
 
+
+
 	/**
 	* @author: @sebhattincatal (www.sebahattncatal.com)
 	* @since: 15 Ağustos 2016
@@ -133,7 +135,8 @@
 						
 						$error = false;
 						$data['statusCode'] = 109;
-						$data['description'] = 'Order succesfully get.';
+						$data['orderId'] = $order_id;
+						$data['description'] = ' Order succesfully get.';
 
 					} else {
 
@@ -170,16 +173,25 @@
 			$api_key = $this->clear($_POST['api_key']);
 			$order_id = $this->clear($_POST["order_id"]);
 
-			$data = $this->orderStatusControl($order_id);
+			if ($this->findApiKey($api_key)) {
+				
+				$data = $this->orderStatusControl($order_id);
+				return $this->response($data);
 
-			return $this->response($data);
+			} else {
+
+				$data['statusCode'] = 1000;
+				$data['description'] = 'This api key already using';
+
+				return $this->response($data);
+			}			
 		}
 
 		private function orderStatusControl($order_id)
 		{
 			global $db;
 
-			$result = $db->get_row("SELECT order_id, urunun_adi, fiyat, siparis_durumu FROM siparisler WHERE order_id = '".$order_id."'");
+			$result = $db->get_row("SELECT order_id, urunun_adi, siparis_durumu FROM siparisler WHERE order_id = '".$order_id."'");
 
 			return $result;
 		}
@@ -200,18 +212,29 @@
 
 			//$result = $db->get_row("SELECT durum_id, name FROM siparis_durumlari WHERE durum_id = '".$durum_id."'");
 
-			$result = $db->get_results("SELECT durum_id, name FROM siparis_durumlari");
+			if ($this->findApiKey($api_key)) {
 
-			foreach ($result as $value) {
-				echo "status_id: ".$value->durum_id."\t";
-				echo "status_name: ".$value->name."\n";
-			}
+				$result = $db->get_results("SELECT durum_id, name FROM siparis_durumlari");
 
-			//return $result;
+				foreach ($result as $value) {
+					echo "status_id: ".$value->durum_id."\t";
+					echo "status_name: ".$value->name."\n";
+				}
+
+				//return $result;
+			} else {
+
+				$data['statusCode'] = 1000;
+				$data['description'] = 'This api key already using';
+
+				return $this->response($data);
+			}	
 		}
 
 		public function orderListStatusControl()
 		{
+			global $db;
+
 			$orders = array();
 
 			$api_key = $this->clear($_POST['api_key']);
@@ -219,15 +242,27 @@
 
 			$orderId = explode(",", $orders);
 
-			foreach ($orderId as $key => $value) {
-				//echo $value;exit;
+			if ($this->findApiKey($api_key)) {
 
-				$result = $db->get_results("SELECT order_id, urunun_adi, fiyat, siparis_durumu FROM siparisler WHERE order_id = '".$value."'");
+				foreach ($orderId as $key => $value) {
+					//echo $value;exit;
 
-			    print_r(get_object_vars($result));
-			}
+					$result[$key] = $db->get_results("SELECT order_id, urunun_adi, siparis_durumu FROM siparisler WHERE order_id = '".$value."'", ARRAY_A);
 
-			//return $result;
+					//$result = $db->get_results("SELECT * FROM api_key WHERE api_key = '".$api_key."'", ARRAY_A);
+
+				    //print_r(get_object_vars($result));
+				}
+
+				return $this->response($result);
+
+			} else {
+
+				$data['statusCode'] = 1000;
+				$data['description'] = 'This api key already using';
+
+				return $this->response($data);
+			}	
 		}
 
 		function notFound()
